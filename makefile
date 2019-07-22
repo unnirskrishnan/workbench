@@ -1,8 +1,6 @@
-all: README.md
-
-README.md:
-	echo "## guessinggame.sh for Coursera/JHU's The Unix Workbench course\n" > README.md
-	echo -n "README.md created: " >> README.md
-	date >> README.md
-	echo -n "\nNumber of lines in guessinggame.sh: " >> README.md
-	wc -l < ./guessinggame.sh >> README.md
+README.md: guessinggame.sh
+	echo "# Guessinggame" > README.md
+	echo "## Peer-graded Assignment: Bash, Make, Git, and GitHub by Aileen Nowak" >> README.md
+	date "+Date: %Y-%m-%d, Time: %H:%M:%S%n" >> README.md
+	echo "Lines of code in guessinggame.sh:" >> README.md
+	wc -l guessinggame.sh | egrep -o "[0-9]+" >> README.md
